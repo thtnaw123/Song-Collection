@@ -13,7 +13,7 @@ router.put("/updatesong", updateSong);
 
 router.get("/getallsongs", getAllSongs);
 
-router.delete("/deleteSong", deleteSong);
+router.delete("/deletesong/:id", deleteSong);
 
 module.exports = router;
 

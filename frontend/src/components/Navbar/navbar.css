@@ -1,0 +1,18 @@
+.hamburger {
+  display: none;
+}
+.Navlogo span {
+  color: hsl(230, 68%, 65%);
+}
+@media only screen and (max-width: 950px) {
+  .nav-menu {
+    left: 0;
+  }
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    border: none;
+  }
+}
