@@ -7,9 +7,18 @@ type ButtonProps = {
   primary?: string;
 };
 
+export const HomeLeftSection = styled.section`
+  width: 45vw;
+  text-align: center;
+  @media screen and (max-width: 950px) {
+    width: 75vw;
+  }
+`;
+
 export const Button = styled.button`
+  margin: 0 10px;
   padding: 10px;
-  background-color: ${(props: ButtonProps) => props.primary};
+  background: ${(props: ButtonProps) => props.primary};
   font-size: 1rem;
   border-radius: 4px;
   color: ${textColor};
@@ -26,17 +35,30 @@ export const HeroSection = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 120px;
+  @media screen and (max-width: 950px) {
+    flex-direction: column;
+  }
 `;
 
-export const HeroText = styled.div`
-  font-size: 10vmin;
+export const HeroText = styled.h1`
+  font-size: 9vmin;
   line-height: 1.2;
   text-align: center;
   margin: 10px 0;
+  @media screen and (max-width: 950px) {
+    font-size: 11vmin;
+  }
 `;
 
-export const HeroImage = styled.div`
+export const HeroTextSpan = styled.span`
+  color: #5a6ed8;
+`;
+
+export const HeroImageStyle = styled.img`
   width: 40dvw;
   height: 100%;
+  @media screen and (max-width: 950px) {
+    width: 75dvw;
+  }
 `;

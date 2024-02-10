@@ -51,7 +51,8 @@ export const Anchornavlink = styled.a`
   font-size: 1.3rem;
   font-weight: 550;
   margin-left: 40px;
-  &:hover {
+  text-decoration: none;
+  s &:hover {
     color: ${ctabuttonColor};
     cursor: pointer;
   }

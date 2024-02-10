@@ -11,24 +11,30 @@ import {
 } from "./navbarEmotion";
 import { useState } from "react";
 import "./navbar.css";
+import { Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   type LinksProps = {
     link: string;
+    path: string;
     setToggleMenu: (toggle: boolean) => void;
   };
 
-  const Links = ({ link, setToggleMenu }: LinksProps) => {
+  const Links = ({ link, setToggleMenu, path }: LinksProps) => {
     return (
       <>
         <li className="nav-item" onClick={() => setToggleMenu(false)}>
-          <Anchornavlink>{link}</Anchornavlink>
+          <Link to={path}>
+            <Anchornavlink>{link}</Anchornavlink>
+          </Link>
         </li>
       </>
     );
   };
 
-  const links: string[] = ["Home", "Mathmatics", "Reasoning", "more"];
+  const links: string[] = ["Home", "Songs", "Add Song", "Statistics"];
+  const paths: string[] = ["/", "songs", "addsong", "stats"];
 
   const [toggleMenu, setToggleMenu] = useState(true);
   console.log(toggleMenu);
@@ -41,8 +47,13 @@ const Navbar = () => {
           </NavLogo>
 
           <NavLinks toggleMenu={toggleMenu}>
-            {links.map((link) => (
-              <Links link={link} key={link} setToggleMenu={setToggleMenu} />
+            {links.map((link, idx) => (
+              <Links
+                link={link}
+                key={link}
+                setToggleMenu={setToggleMenu}
+                path={paths[idx]}
+              />
             ))}
           </NavLinks>
           <button
@@ -67,6 +78,7 @@ const Navbar = () => {
           </button>
         </InnerNavbar>
       </NavbarContainer>
+      <Outlet />
     </>
   );
 };

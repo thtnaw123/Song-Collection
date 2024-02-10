@@ -1,0 +1,11 @@
+@media screen and (max-width: 950px) {
+  .home-left .cta-button {
+    width: 50dvw;
+    /* justify-content: center; */
+  }
+  .home-left button {
+    width: 30%;
+    min-width: fit-content;
+    font-size: 0.9rem;
+  }
+}
